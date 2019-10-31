@@ -8,18 +8,20 @@
     <title>JAWN Trains</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
     <script>
-        // Your web app's Firebase configuration
+        //Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyBYITarIGkIw6HFkU42QqWlySlsGR9J3Y8",
             authDomain: "the-moose-app.firebaseapp.com",
@@ -71,7 +73,6 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Train Line</th>
-                                    <th scope="col">Origin</th>
                                     <th scope="col">Next Destination</th>
                                     <th scope="col">Train Frequency</th>
                                     <th scope="col">Next Train Arrival</th>
@@ -81,143 +82,135 @@
 
                             <tr>
                                 <th scope="col">
-                                    <h6>Atlantic City Local JAWN</h6>
+                                    <h6>Phila. to Atlantic City Local JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Atlantic City, NJ</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>30 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>04:00 PM</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>20</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
+
                             <tr>
                                 <th scope="col">
-                                    <h6>Atlantic City Express JAWN</h6>
+                                    <h6>Phila. to Atlantic City Express JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Atlantic City, NJ</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>10 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>03:20 PM</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>3</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
+
                             <tr>
                                 <th scope="col">
-                                    <h6>Philadelphia</h6>
+                                    <h6>Phila. to Wilmington JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Wilmington, NJ</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>8 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>04:15 PM</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>8</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
+
                             <tr>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Phila. to Newark JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Newark, DE</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>5 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>03:55</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>3</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
+
                             <tr>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Phila. to Trenton JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Trenton, NJ</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>10 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>02:52 PM</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>6</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
+
                             <tr>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>B.F.B (Ben Franklin Bridge) JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Camden, NJ</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>10 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>04:40</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>3</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
+
                             <tr>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>S.I.C JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>Sea Isle City, NJ</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>45 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>05:53 PM</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6></h6>
+                                    <h6>32</h6>
                                 </th>
-                                <th scope="col">
-                                    <h6></h6>
-                                </th>
+                                
                             </tr>
 
                             <tbody>
@@ -230,30 +223,30 @@
 
         <div class="row">
             <div class="col-md-12">
-                <!-- Add Employee  -->
+                <!--add a destination-->
                 <div class="card mb-4">
                     <div class="card-header">
                         <h4>Search JAWN Lines</h4>
                     </div>
                     <div class="card-body">
 
-                        <!-- Entry Form -->
+                        <!--the add train form-->
                         <form>
                             <div class="form-group">
-                                <label for="employee-name-input">Employee Name</label>
-                                <input class="form-control" id="employee-name-input" placeholder="Jane Doe" type="text">
+                                <label for="employee-name-input">Train Name</label>
+                                <input class="form-control" id="employee-name-input">
                             </div>
                             <div class="form-group">
-                                <label for="role-input">Role</label>
-                                <input class="form-control" id="role-input" placeholder="CEO" type="text">
+                                <label for="role-input">Destination</label>
+                                <input class="form-control" id="role-input">
                             </div>
                             <div class="form-group">
-                                <label for="start-input">Start Date (MM/DD/YYYY)</label>
-                                <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
+                                <label for="start-input">First Train (Please Enter Military Time)</label>
+                                <input class="form-control" id="start-input">
                             </div>
                             <div class="form-group">
-                                <label for="rate-input">Monthly Rate</label>
-                                <input class="form-control" id="rate-input" placeholder="200000" type="text">
+                                <label for="rate-input">Frequency (minutes)</label>
+                                <input class="form-control" id="rate-input">
                             </div>
                             <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
                         </form>
