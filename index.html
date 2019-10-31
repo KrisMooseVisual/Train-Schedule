@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,114 +8,265 @@
     <title>JAWN Trains</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-  <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBYITarIGkIw6HFkU42QqWlySlsGR9J3Y8",
-        authDomain: "the-moose-app.firebaseapp.com",
-        databaseURL: "https://the-moose-app.firebaseio.com",
-        projectId: "the-moose-app",
-        storageBucket: "the-moose-app.appspot.com",
-        messagingSenderId: "768484475686",
-        appId: "1:768484475686:web:f095784483a6c4f570f7e7"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    
-    var database = firebase.database();
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBYITarIGkIw6HFkU42QqWlySlsGR9J3Y8",
+            authDomain: "the-moose-app.firebaseapp.com",
+            databaseURL: "https://the-moose-app.firebaseio.com",
+            projectId: "the-moose-app",
+            storageBucket: "the-moose-app.appspot.com",
+            messagingSenderId: "768484475686",
+            appId: "1:768484475686:web:f095784483a6c4f570f7e7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var database = firebase.database();
     </script>
 
-  <style>
-    #employee-table th,
-    td {
-      display: inline-block;
-      width: 16.575%;
-    }
-  </style>
+    <style>
+        #jawnTrain-table th,
+        td {
+            display: inline-block;
+            width: 20%;
+        }
+    </style>
 </head>
+
 <body>
 
-        <div class="container">
+    <div class="container">
 
-                
-                <div class="jumbotron" style="background-color: rgb(36, 0, 243); color: white">
-                  <h1 class="text-center">The JAWN Tristate Train Line</h1>
-                  <h3 class="text-center">Servicing Philadelphia, North Delaware, & Southern New Jersey</h3>
-                </div>
-            
-                <div class="row">
-            
-                  <div class="col-md-12">
-            
-                    <!--JAWN Train schedule-->
-                    <div class="card mb-4">
-                      <div class="card-header"><h5>JAWN Train Schedule</h5></div>
-                      <div class="card-body">
-                        <table class="table table-sm table-hover" id='employee-table'>
-                          <thead>
-                            <tr>
-                              <th scope="col">Train Line</th>
-                              <th scope="col">Next Destination</th>
-                              <th scope="col">Train Frequency</th>
-                              <th scope="col">Next Train Arrival</th>
-                              <th scope="col">Minutes Away</th>                             
-                            </tr>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                        </table>
-                      </div>
+
+        <div class="jumbotron" style="background-color: rgb(13, 4, 68); color: white">
+            <h1 class="text-center">The J.A.W.N (JAWN)</h1>
+            <h5 class="text-center">Journey Across Wide Nationalities</h5>
+            <h2 class="text-center">Tristate Train Line</h2>
+            <h3 class="text-center">Servicing Philadelphia County, Northern Delaware, & Southern New Jersey</h3>
+            <center><h5>'You Gotta Catch This JAWN!'</h5></center>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!--JAWN Train schedule-->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>JAWN Train Schedule</h5>
                     </div>
-                  </div>
+                    <div class="card-body">
+                        <table class="table table-sm table-hover" id='employee-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Line</th>
+                                    <th scope="col">Origin</th>
+                                    <th scope="col">Next Destination</th>
+                                    <th scope="col">Train Frequency</th>
+                                    <th scope="col">Next Train Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <th scope="col">
+                                    <h6>Atlantic City Local JAWN</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <h6>Atlantic City Express JAWN</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <h6>Philadelphia</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                                <th scope="col">
+                                    <h6></h6>
+                                </th>
+                            </tr>
+
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            
-                <div class="row">
-                  <div class="col-md-12">
-                    <!-- Add Employee  -->
-                    <div class="card mb-4">
-                      <div class="card-header">Add Employee</div>
-                      <div class="card-body">
-            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Add Employee  -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Search JAWN Lines</h4>
+                    </div>
+                    <div class="card-body">
+
                         <!-- Entry Form -->
                         <form>
-                          <div class="form-group">
-                            <label for="employee-name-input">Employee Name</label>
-                            <input class="form-control" id="employee-name-input" placeholder="Jane Doe" type="text">
-                          </div>
-                          <div class="form-group">
-                            <label for="role-input">Role</label>
-                            <input class="form-control" id="role-input" placeholder="CEO" type="text">
-                          </div>
-                          <div class="form-group">
-                            <label for="start-input">Start Date (MM/DD/YYYY)</label>
-                            <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
-                          </div>
-                          <div class="form-group">
-                            <label for="rate-input">Monthly Rate</label>
-                            <input class="form-control" id="rate-input" placeholder="200000" type="text">
-                          </div>
-                          <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+                            <div class="form-group">
+                                <label for="employee-name-input">Employee Name</label>
+                                <input class="form-control" id="employee-name-input" placeholder="Jane Doe" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="role-input">Role</label>
+                                <input class="form-control" id="role-input" placeholder="CEO" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="start-input">Start Date (MM/DD/YYYY)</label>
+                                <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-input">Monthly Rate</label>
+                                <input class="form-control" id="rate-input" placeholder="200000" type="text">
+                            </div>
+                            <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
                         </form>
-            
-                      </div>
+
                     </div>
-                  </div>
                 </div>
-            
-              </div>
-            
-              <!-- JavaScript -->
-              <script src="timesheetLogic.js"></script
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="timesheetLogic.js"></script
     
 </body>
 </html>
