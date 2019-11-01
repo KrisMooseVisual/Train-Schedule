@@ -18,32 +18,6 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-
-    <script>
-        //Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBYITarIGkIw6HFkU42QqWlySlsGR9J3Y8",
-            authDomain: "the-moose-app.firebaseapp.com",
-            databaseURL: "https://the-moose-app.firebaseio.com",
-            projectId: "the-moose-app",
-            storageBucket: "the-moose-app.appspot.com",
-            messagingSenderId: "768484475686",
-            appId: "1:768484475686:web:f095784483a6c4f570f7e7"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        var database = firebase.database();
-    </script>
-
-    <style>
-        #jawnTrain-table th,
-        td {
-            display: inline-block;
-            width: 20%;
-        }
-    </style>
 </head>
 
 <body>
@@ -56,7 +30,9 @@
             <h5 class="text-center">Journey Across Wide Nationalities</h5>
             <h2 class="text-center">Tristate Train Line</h2>
             <h3 class="text-center">Servicing Philadelphia County, Northern Delaware, & Southern New Jersey</h3>
-            <center><h5>'You Gotta Catch This JAWN!'</h5></center>
+            <center>
+                <h5>'You Gotta Catch This JAWN!'</h5>
+            </center>
         </div>
 
         <div class="row">
@@ -69,7 +45,7 @@
                         <h5>JAWN Train Schedule</h5>
                     </div>
                     <div class="card-body">
-                        <table class="table table-sm table-hover" id='employee-table'>
+                        <table class="table table-sm table-hover" id="trainLineSetUp">
                             <thead>
                                 <tr>
                                     <th scope="col">Train Line</th>
@@ -82,7 +58,8 @@
 
                             <tr>
                                 <th scope="col">
-                                    <h6>Phila. to Atlantic City Local JAWN</h6>
+                                        <h6>Phila. to Atlantic City Local JAWN</h6>
+                                    </div>
                                 </th>
                                 <th scope="col">
                                     <h6>Atlantic City, NJ</h6>
@@ -91,12 +68,12 @@
                                     <h6>30 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>04:00 PM</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>20</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tr>
@@ -110,12 +87,12 @@
                                     <h6>10 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>03:20 PM</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>3</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tr>
@@ -123,18 +100,18 @@
                                     <h6>Phila. to Wilmington JAWN</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>Wilmington, NJ</h6>
+                                    <h6>Wilmington, DE</h6>
                                 </th>
                                 <th scope="col">
                                     <h6>8 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>04:15 PM</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>8</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tr>
@@ -148,12 +125,12 @@
                                     <h6>5 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>03:55</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>3</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tr>
@@ -167,12 +144,12 @@
                                     <h6>10 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>02:52 PM</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>6</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tr>
@@ -186,12 +163,12 @@
                                     <h6>10 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>04:40</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>3</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tr>
@@ -205,12 +182,12 @@
                                     <h6>45 min.</h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>05:53 PM</h6>
+                                    <h6></h6>
                                 </th>
                                 <th scope="col">
-                                    <h6>32</h6>
+                                    <h6></h6>
                                 </th>
-                                
+
                             </tr>
 
                             <tbody>
@@ -223,7 +200,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <!--add a destination-->
+                <!--adding in destination-->
                 <div class="card mb-4">
                     <div class="card-header">
                         <h4>Search JAWN Lines</h4>
@@ -233,22 +210,29 @@
                         <!--the add train form-->
                         <form>
                             <div class="form-group">
-                                <label for="employee-name-input">Train Name</label>
-                                <input class="form-control" id="employee-name-input">
+                                <label for="train-line-input">Train Name</label>
+                                <input class="form-control" 
+                                id="acLocal"
+                                id="acExpress"
+                                id="wilmingtonDe"                                
+                                id="newarkDe"
+                                id="trentonNj"
+                                id="bfBridge"
+                                id="sicNj">
                             </div>
                             <div class="form-group">
-                                <label for="role-input">Destination</label>
-                                <input class="form-control" id="role-input">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input">
                             </div>
                             <div class="form-group">
-                                <label for="start-input">First Train (Please Enter Military Time)</label>
-                                <input class="form-control" id="start-input">
+                                <label for="start-input">First Train</label>
+                                <input class="form-control" id="firstTrain-input">
                             </div>
                             <div class="form-group">
-                                <label for="rate-input">Frequency (minutes)</label>
-                                <input class="form-control" id="rate-input">
+                                <label for="rate-input">Train Frequency</label>
+                                <input class="form-control" id="frequency-input">
                             </div>
-                            <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+                            <button class="btn btn-primary float-right" id="submitBtn-input">Submit</button>
                         </form>
 
                     </div>
@@ -258,8 +242,12 @@
 
     </div>
 
+    <!--Moment JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
     <!-- JavaScript -->
-    <script src="timesheetLogic.js"></script
-    
+    <script type="text/javascript"></script>
+
 </body>
+
 </html>

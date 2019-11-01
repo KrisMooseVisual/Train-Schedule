@@ -16,14 +16,23 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
-// Assumptions
-var tFrequency = 3;
+$("#submitBtn").on("click", function(event){
+    event.preventDefault();
+});
 
-// Time is 3:30 AM
-var firstTime = "03:30";
+//train variables and values
+var trainName = $("#acLocal", "#acExpress", "#wilmingtonDe", "#newarkDe", "#trentonNj", "#bfBridge", "#sicNj").val().trim();
+var destination = $("#atlanticCity", "#atlanticCityNj", "#wilmington", "#newark", "#trenton", "#camden", "#SeaIsleCity").val().trim();
+
+
+// Assumptions
+var frequency = $("#freeQuincy").val().trim();
+
+//4:00 PM
+var firstTime = "16:00";
 
 // First Time (pushed back 1 year to make sure it comes before current time)
-var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+var firstTimeConverted = moment(firstTime, "HH:MM").subtract(1, "years");
 console.log(firstTimeConverted);
 
 // Current Time
