@@ -27,18 +27,16 @@ $(document).ready(function () {
         event.preventDefault();
 
         nameOfTrain = $("#inputName").val();
-        destination = $("#inputPlace").val();
-        timeOfTrain = $("#inputTrainTime").val();
-        frequencyOfTrain = $("#inputConsistancy").val();
-        //console logging click functions
         console.log(nameOfTrain);
+        destination = $("#inputPlace").val();
         console.log(destination);
+        timeOfTrain = $("#inputTrainTime").val();
         console.log(timeOfTrain);
+        frequencyOfTrain = $("#inputConsistancy").val();
         console.log(frequencyOfTrain);
 
 
         database.ref().push({
-
             nameOfTrain: nameOfTrain,
             destination: destination,
             timeOfTrain: timeOfTrain,
