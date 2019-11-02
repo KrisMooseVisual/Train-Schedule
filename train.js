@@ -35,7 +35,6 @@ $(document).ready(function () {
         frequencyOfTrain = $("#inputConsistancy").val();
         console.log(frequencyOfTrain);
 
-
         database.ref().push({
             nameOfTrain: nameOfTrain,
             destination: destination,
@@ -47,8 +46,22 @@ $(document).ready(function () {
 
     //add child function
     database.ref().on("child_added", function (snapshot) {
+        //forgot to add snapshot.val
+        var sv = snapshot.val();
+            console.log(sv.nameOfTrain);
+            console.log(sv.destination);
+            console.log(sv.timeOfTrain);
+            console.log(sv.frequencyOfTrain);
+
+
         //<tr> row variable for train information
         var row = $("<tr>");
+        //settings for TD rows
+        var trainTD = $("<td>");
+        var placeTD = $("<td>");
+        var timeTD = $("<td>");
+        var arrivalTD = $("<td>");
+        var minutesTD = $("<td>");
 
         //sv variable to show text
         nameTD.text(sv.trainTD);
@@ -59,13 +72,6 @@ $(document).ready(function () {
 
         nameTD.text(sv.arrivalTD);
         newRow.prepend(nameTD);
-
-        //settings for TD rows
-        var trainTD = $("<td>");
-        var placeTD = $("<td>");
-        var timeTD = $("<td>");
-        var arrivalTD = $("<td>");
-        var minutesTD = $("<td>");
 
         // First Time (pushed back 1 year to make sure it comes before current time)
         var firstTimeConverted = moment(firstTime, "HH:MM").subtract(1, "years");
