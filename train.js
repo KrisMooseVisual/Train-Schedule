@@ -21,7 +21,7 @@ var destination;
 var timeOfTrain;
 var frequencyOfTrain;
 
-$("#submitBtn").on("click", function (event) {
+$("button").on("click", function (event) {
     event.preventDefault();
 
     nameOfTrain = $("#inputName").val();
