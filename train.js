@@ -14,34 +14,73 @@ $(document).ready(function () {
     // Firebase initialization
     firebase.initializeApp(firebaseConfig);
 
+    //database reference variable
     var database = firebase.database();
+
+    //variables connected to the HTML id
+    var nameOfTrain;
+    var destination;
+    var timeOfTrain;
+    var frequencyOfTrain;
 
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
+
+        nameOfTrain = $("#inputName").val();
+        destination = $("#inputPlace").val();
+        timeOfTrain = $("#inputTrainTime").val();
+        frequencyOfTrain = $("#inputConsistancy").val();
+        //console logging click functions
+        console.log(nameOfTrain);
+        console.log(destination);
+        console.log(timeOfTrain);
+        console.log(frequencyOfTrain);
+
+
+        database.ref().push({
+
+            nameOfTrain: nameOfTrain,
+            destination: destination,
+            timeOfTrain: timeOfTrain,
+            frequencyOfTrain: frequencyOfTrain,
+        });
+
     });
 
-    //train variables and values
-    var trainName = $("#acLocal", "#acExpress", "#wilmingtonDe", "#newarkDe", "#trentonNj", "#bfBridge", "#sicNj").val().trim();
-    var destination = $("#atlanticCity", "#atlanticCityNj", "#wilmington", "#newark", "#trenton", "#camden", "#SeaIsleCity").val().trim();
+    //add child function
+    database.ref().on("child_added", function (snapshot) {
+        //<tr> row variable for train information
+        var row = $("<tr>");
+
+        //sv variable to show text
+        nameTD.text(sv.trainTD);
+        newRow.prepend(nameTD);
+
+        nameTD.text(sv.placeTD);
+        newRow.prepend(nameTD);
+
+        nameTD.text(sv.arrivalTD);
+        newRow.prepend(nameTD);
+
+        //settings for TD rows
+        var trainTD = $("<td>");
+        var placeTD = $("<td>");
+        var timeTD = $("<td>");
+        var arrivalTD = $("<td>");
+        var minutesTD = $("<td>");
+
+        // First Time (pushed back 1 year to make sure it comes before current time)
+        var firstTimeConverted = moment(firstTime, "HH:MM").subtract(1, "years");
+        console.log(firstTimeConverted);
+    });
 
 
-    // Assumptions
-    var frequency = $("#freeQuincy").val().trim();
 
-    //current time is 7:32 PM (19:32)
-    var acLocal = "";
-    var acExpress = "";
-    var wilmingtonDe = "";
-    var newarkDe = "";
-    var trentonNj = "";
-    var bfBridge = "";
-    var sicNj = "";
-    var destination = "";
-    var firstTrain = "";
-    var frequencyOfTrain = "";
-    
+
+
 
     // First Time (pushed back 1 year to make sure it comes before current time)
+
     var firstTimeConverted = moment(firstTime, "HH:MM").subtract(1, "years");
     console.log(firstTimeConverted);
 
